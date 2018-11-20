@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <header>
+        <div>
+            <img class="logo" src='images/366c1da9-4401-4ec4-9d5e-4ee625551662.png' alt="logo">
+        </div>
+    </header>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../Js%20task2/home.html">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Congress 113 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Js%20task2/senate-data.html">Senate</a></li>
+                            <li><a href="../Js%20task2/house-data.html">House</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="senate-attendance-page.html">Senate</a></li>
+                            <li><a href="#">House</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Party Loyalty <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="senate-party-loyalty-page.html">Senate</a></li>
+                            <li><a href="house-party-loyalty-page.html">House</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="align">
+                    <div class="align2">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"> <a href="mailto:info@tgif.net">info@tgif.net </a></span>
+                    </div>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <!--Table container-->
+    <div class="color">
+        <div class="margin">
+
+            <h2>Attendance</h2>
+            <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
+
+            <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
+
+        </div>
+    </div>
+    <div class="color"><h2>House at a glance</h2></div>
+    <table class="table table-sm table-dark">
+
+        <thead>
+            <tr>
+                <th scope="col">Party</th>
+                <th scope="col">Number of reps</th>
+                <th scope="col">% Voted with Prty</th>
+            </tr>
+        </thead>
+        <tbody id="HouseAtAGlance">
+        </tbody>
+       
+
+    </table>
+
+
+    <div class="color"><h2>Least Engaged (Bottom 10% Attendance)</h2></div>
+    <table class="table table-sm table-dark">
+
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Number of Missed Votes</th>
+                <th scope="col">% Missed</th>
+            </tr>
+        </thead>
+        
+        <tbody id="LeastEngaged"></tbody>
+    </table>
+
+    <div class="color"><h2>Most Engaged (Top 10% Attendance)</h2></div>
+    <table class="table table-sm table-dark">
+
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Number of Missed Votes</th>
+                <th scope="col">% Missed</th>
+            </tr>
+        </thead>
+        <tbody id="MostEngaged">
+        </tbody>
+    </table>
+
+    <pre id="house-attendance-page.html"></pre>
+    <script src="../Js%20task2/js/house.js"></script>
+    <script src="js/Hstatistics.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <footer>
+        <p class="footer"> &copy; 2018 TGIF | All Rights Reserved </p>
+    </footer>
+</body>
+
+</html>

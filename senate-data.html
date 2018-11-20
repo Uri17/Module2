@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <header>
+        <div>
+            <img class="logo" src='images/366c1da9-4401-4ec4-9d5e-4ee625551662.png' alt="logo">
+        </div>
+    </header>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home.html">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Congress 113 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Senate</a></li>
+                            <li><a href="house-data.html">House</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Js%20task3/senate-attendance-page.html">Senate</a></li>
+                            <li><a href="../Js%20task3/house-attendance-page.html">House</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Party Loyalty <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Js%20task3/senate-party-loyalty-page.html">Senate</a></li>
+                            <li><a href="../Js%20task3/house-party-loyalty-page.html">House</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="align">
+                    <div class="align2">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"> <a href="mailto:info@tgif.net">info@tgif.net </a></span>
+                    </div>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!--Table container-->
+    <div class="color">
+        <div class="margin">
+            <h2>Senators</h2>
+            <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+        </div>
+    </div>
+
+    <div class="mainboxes">
+        <div class="row">
+            <div class="field">
+                <p>Filter by party:</p>
+            </div>
+            <div class="field">
+                <input type="checkbox" onchange="getCheckedBoxes()" name="mycheckboxes" value="R"> Republican
+            </div>
+            <div class="field">
+                <input type="checkbox" onchange="getCheckedBoxes()" name="mycheckboxes" value="D"> Democrat
+            </div>
+            <div class="field">
+                <input type="checkbox" onchange="getCheckedBoxes()" name="mycheckboxes" value="I"> Independent
+            </div>
+            <div class="row1">
+                <div class="field">
+                    <p>Filter by State:</p>
+                </div>
+                <div class="field2">
+                    <select id="states" onchange="getCheckedBoxes()">
+                        <option value="All">
+                            All</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <table class="table table-sm table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Party</th>
+                <th scope="col">State</th>
+                <th scope="col">Years in Office</th>
+                <th scope="col"> % Votes w/party</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+
+    </table>
+    <pre id="senate-data"></pre>
+    <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <footer>
+        <p class="footer"> &copy; 2018 TGIF | All Rights Reserved </p>
+    </footer>
+</body>
+
+</html>
