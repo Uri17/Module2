@@ -15,13 +15,14 @@ fetch("https://api.propublica.org/congress/v1/113/senate/members.json", {
     }
     throw new Error(response.statusText);
 }).then(function (jdata) {
-    
+
     data = jdata;
     console.log(data);
-    
+
     createTable(data.results[0].members);
     states();
     
+
 
 }).catch(function (error) {
     console.log("Request failed:" + error.message);
@@ -36,65 +37,77 @@ function createTable(members) {
     var tbody = document.getElementById("tbody");
     tbody.innerHTML = '';
 
-    for (i = 0; i < members.length; i++) {
+    if (members.length > 0) {
 
-        var thead = document.createElement("thead");
+        for (i = 0; i < members.length; i++) {
+
+            var thead = document.createElement("thead");
+
+            var tr = document.createElement("tr");
+
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+            var td4 = document.createElement("td");
+            var td5 = document.createElement("td");
+            var addlink = document.createElement("a");
+
+
+            var name = members[i].first_name;
+            var middleName = members[i].middle_name;
+
+            if (middleName == null) {
+                middleName = " "
+            };
+
+            var lastName = members[i].last_name;
+            var party = members[i].party;
+            var state = members[i].state;
+            var years_in_office = members[i].seniority;
+            var votes_with_party_pct = members[i].votes_with_party_pct;
+
+            var link = members[i].url;
+
+            addlink.setAttribute("href", link);
+
+            addlink.setAttribute("target", "_blank")
+
+
+
+            td1.append(addlink);
+            addlink.append(name + " " + middleName + " " + lastName);
+            td2.append(party);
+            td3.append(state);
+            td4.append(years_in_office);
+            td5.append(votes_with_party_pct);
+
+
+
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+            tr.append(td4);
+            tr.append(td5);
+
+            tbody.append(tr);
+
+        }
+
+    } else {
 
         var tr = document.createElement("tr");
+        var td = document.createElement("td");
+        var msg = "Sorry, there's no data with this choice";
 
-        var td1 = document.createElement("td");
-        var td2 = document.createElement("td");
-        var td3 = document.createElement("td");
-        var td4 = document.createElement("td");
-        var td5 = document.createElement("td");
-        var addlink = document.createElement("a");
+        td.append(msg);
 
-
-        var name = members[i].first_name;
-        var middleName = members[i].middle_name;
-
-        if (middleName == null) {
-            middleName = " "
-        };
-
-        var lastName = members[i].last_name;
-        var party = members[i].party;
-        var state = members[i].state;
-        var years_in_office = members[i].seniority;
-        var votes_with_party_pct = members[i].votes_with_party_pct;
-
-        var link = members[i].url;
-
-        addlink.setAttribute("href", link);
-
-        addlink.setAttribute("target", "_blank")
-
-
-
-        td1.append(addlink);
-        addlink.append(name + " " + middleName + " " + lastName);
-        td2.append(party);
-        td3.append(state);
-        td4.append(years_in_office);
-        td5.append(votes_with_party_pct);
-
-
-
-        tr.append(td1);
-        tr.append(td2);
-        tr.append(td3);
-        tr.append(td4);
-        tr.append(td5);
+        tr.append(td);
 
         tbody.append(tr);
 
-
-
-
     }
+
 }
-
-
 
 
 
@@ -107,7 +120,7 @@ function getCheckedBoxes() {
     var members = data.results[0].members;
 
     //document.getElementById("checkbox").addEventListener("click", function() {
-     //   document.getElementById("states").innerHTML =;
+    //   document.getElementById("states").innerHTML =;
     //});
 
     // loop over them all
@@ -176,6 +189,5 @@ function states() {
 
     console.log(repeatedstates);
 }
-
 
 

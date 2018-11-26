@@ -37,7 +37,8 @@ function createTable(members) {
     var tbody = document.getElementById("tbody");
     tbody.innerHTML = "";
 
-
+if (members.length > 0) {
+    
     for (i = 0; i < members.length; i++) {
 
         var thead = document.createElement("thead")
@@ -89,10 +90,22 @@ function createTable(members) {
 
         tbody.append(tr);
 
+}
+    
+} else {
 
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+        var msg = "Sorry, there's no data with this choice";
 
+        td.append(msg);
+
+        tr.append(td);
+
+        tbody.append(tr);
 
     }
+
 }
 
 
